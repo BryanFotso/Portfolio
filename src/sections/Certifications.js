@@ -1,5 +1,3 @@
-import React from 'react';
-
 const certifications = [
   {
     title: "Microsoft Azure Data Engineer Associate",

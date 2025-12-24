@@ -1,22 +1,24 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Education from './components/Education';
-import Certifications from './components/Certifications';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Footer from 'components/layout/Footer';
+import Navbar from 'components/layout/Navbar';
+import About from 'sections/About';
+import Certifications from 'sections/Certifications';
+import Contact from 'sections/Contact';
+import Education from 'sections/Education';
+import Experience from 'sections/Experience';
+import Hero from 'sections/Hero';
+import Projects from 'sections/Projects';
+import Skills from 'sections/Skills';
 
 function App() {
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f0 100%)',
-      color: '#1d1d1f'
-    }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        background:
+          'linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f0 100%)',
+        color: '#1d1d1f',
+      }}
+    >
       <Navbar />
       <Hero />
       <About />

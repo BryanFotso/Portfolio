@@ -1,5 +1,3 @@
-import React from 'react';
-
 const education = [
   {
     degree: "Ingénierie Informatique (Big Data)",
