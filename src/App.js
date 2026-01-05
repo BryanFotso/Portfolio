@@ -14,8 +14,7 @@ function App() {
     <div
       style={{
         minHeight: '100vh',
-        background:
-          'linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f0 100%)',
+        background: 'linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f0 100%)',
         color: '#1d1d1f',
       }}
     >

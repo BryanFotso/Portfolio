@@ -1,68 +1,45 @@
 # Portfolio - Chris Bryan Fotso Tala
 
-Portfolio professionnel React (CRA) avec une base Tailwind prête à l'emploi, structuré pour un démarrage local rapide et une exécution Docker simple.
+## Data Engineer Portfolio
 
-## Prérequis
+Portfolio professionnel de Chris Fotso, Data Engineer spécialisé dans les architectures de données, le développement backend et les pratiques DevOps.
 
-- Node.js 20 LTS
-- npm 10+
-- Docker + Docker Compose (optionnel, pour le run container)
+## À propos
 
-## Lancement local
+Data Engineer passionné par la construction de pipelines robustes, la qualité des données et la mise en production. Spécialisé dans Python, FastAPI, Docker et les technologies de données modernes.
 
-```bash
-npm install
-npm run dev
-```
+## Technologies utilisées
 
-L'application est disponible sur `http://localhost:3000`.
-
-## Lancement via Docker
-
-```bash
-docker compose up --build
-```
-
-L'application est disponible sur `http://localhost:8080`.
-
-### Mode dev Docker (hot reload)
-
-```bash
-docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
-```
-
-## Commandes utiles
-
-```bash
-npm run dev
-npm run build
-npm run lint
-npm run format
-npm run test
-```
+- **Frontend** : React (JavaScript)
+- **Design** : Tailwind CSS
+- **Deployment** : GitHub Pages, Github Actions
 
 ## Structure du repo
 
 ```
 .
+├── .devcontainer/          # Dev Container (VS Code)
 ├── docker/                 # Config Nginx pour le build
 ├── public/                 # Assets statiques
 ├── src/
 │   ├── components/         # Composants réutilisables (layout)
 │   ├── sections/           # Sections de page (Hero, About, etc.)
 │   └── styles/             # Styles globaux
-├── .github/workflows/      # CI GitHub Actions
+├── .github/workflows/      # CI/CD GitHub Actions
 └── docker-compose*.yml     # Docker (prod + dev)
 ```
 
-Alias d'import: baseUrl configuré sur `src` (`components/...`, `sections/...`).
+## Déploiement
 
-## Variables d’environnement
+Ce portfolio est déployé sur GitHub Pages et accessible à l'adresse :
+**https://bryanfotso.github.io/Portfolio**
 
-Copie `.env.example` vers `.env` si besoin. CRA exige le préfixe `REACT_APP_`.
+## Contact
 
-## Dépannage
+- **Email** : chrisfotso@icloud.com
+- **Téléphone** : +33 7 72 25 76 34
+- **Localisation** : Montpellier, France
+- **LinkedIn** : [Chris Fotso](https://linkedin.com/in/chris-fotso)
+- **GitHub** : [BryanFotso](https://github.com/BryanFotso)
 
-- **Port déjà utilisé**: change le port dans `docker-compose.yml` ou libère 8080/3000.
-- **Version Node**: utilise Node 20 LTS pour éviter des écarts de build.
-- **Cache npm**: en cas d'erreur, supprime `node_modules` et relance `npm install`.
+**Développé par Chris Fotso**
