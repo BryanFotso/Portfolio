@@ -31,6 +31,10 @@ body {
   overflow-x: hidden;
 }
 
+.app {
+  padding-top: 4rem;
+}
+
 /* Variables CSS pour les couleurs Apple */
 :root {
   --apple-blue: #007aff;
@@ -348,7 +352,7 @@ body {
   background: rgba(0, 122, 255, 0.1);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .navbar-desktop {
     display: block;
   }
@@ -371,6 +375,14 @@ body {
   text-align: center;
   padding: 2rem 1rem;
   background: linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f0 100%);
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    min-height: calc(100vh - 4rem);
+    align-items: flex-start;
+    padding-top: 6rem;
+  }
 }
 
 .hero-content {
@@ -403,6 +415,39 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 2rem;
+}
+
+.hero-stats {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.hero-stat {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 120px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.hero-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007aff;
+  margin-bottom: 0.5rem;
+}
+
+.hero-stat-label {
+  font-size: 0.9rem;
+  color: #8e8e93;
+  font-weight: 500;
 }
 
 /* Sections */
@@ -438,6 +483,16 @@ body {
     align-items: center;
   }
 
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .hero-stat--wide {
+    grid-column: span 2;
+    max-width: 280px;
+  }
+
   .section {
     padding: 4rem 1rem;
   }
@@ -464,6 +519,15 @@ body {
 
   .section-title {
     font-size: 2rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stat--wide {
+    grid-column: auto;
+    max-width: 240px;
   }
 }
 
