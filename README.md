@@ -29,13 +29,6 @@ Data Engineer passionné par la construction de pipelines robustes, la qualité 
 └── docker-compose*.yml     # Docker (prod + dev)
 ```
 
-## Dev Container (VS Code)
-
-- **Prérequis** : Docker Desktop + extension VS Code "Dev Containers".
-- **Démarrage** : commande "Dev Containers: Reopen in Container".
-- **Lancer le dev** : `npm run dev`.
-- **Port** : 3000 exposé automatiquement.
-
 ## Déploiement
 
 Ce portfolio est déployé sur GitHub Pages et accessible à l'adresse :
