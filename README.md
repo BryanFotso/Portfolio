@@ -1,43 +1,68 @@
 # Portfolio - Chris Bryan Fotso Tala
 
-##  Data Engineer Portfolio
+Portfolio professionnel React (CRA) avec une base Tailwind prête à l'emploi, structuré pour un démarrage local rapide et une exécution Docker simple.
 
-Portfolio professionnel de Chris Bryan Fotso Tala, Data Engineer spécialisé dans les architectures de données, le développement backend et les pratiques DevOps.
+## Prérequis
 
-## À propos
+- Node.js 20 LTS
+- npm 10+
+- Docker + Docker Compose (optionnel, pour le run container)
 
-Data Engineer passionné par la construction de pipelines robustes, la qualité des données et la mise en production. Spécialisé dans Python, FastAPI, Docker et les technologies de données modernes.
+## Lancement local
 
-## Technologies utilisées
-
-- **Frontend** : HTML5, CSS3, JavaScript (Vanilla)
-- **Icons** : Font Awesome
-- **Design** : Responsive, Animations CSS
-- **Deployment** : GitHub Pages
-
-## Structure du projet
-
-```
-Portfolio/
-├── index.html          # Page principale
-├── styles.css          # Styles CSS
-├── script.js           # JavaScript interactif
-├── Data_engineer_FR.pdf # CV téléchargeable
-└── README.md           # Documentation
+```bash
+npm install
+npm run dev
 ```
 
-##  Déploiement
+L'application est disponible sur `http://localhost:3000`.
 
-Ce portfolio est déployé sur GitHub Pages et accessible à l'adresse :
-**https://bryanfotso.github.io/Portfolio**
+## Lancement via Docker
 
-## Contact
+```bash
+docker compose up --build
+```
 
-- **Email** : chrisfotso@icloud.com
-- **Téléphone** : +33 7 72 25 76 34
-- **Localisation** : Toulouse, France
-- **LinkedIn** : [Chris Fotso](https://linkedin.com/in/chris-fotso)
-- **GitHub** : [BryanFotso](https://github.com/BryanFotso)
+L'application est disponible sur `http://localhost:8080`.
 
+### Mode dev Docker (hot reload)
 
-**Développé par Chris Fotso**
+```bash
+docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
+```
+
+## Commandes utiles
+
+```bash
+npm run dev
+npm run build
+npm run lint
+npm run format
+npm run test
+```
+
+## Structure du repo
+
+```
+.
+├── docker/                 # Config Nginx pour le build
+├── public/                 # Assets statiques
+├── src/
+│   ├── components/         # Composants réutilisables (layout)
+│   ├── sections/           # Sections de page (Hero, About, etc.)
+│   └── styles/             # Styles globaux
+├── .github/workflows/      # CI GitHub Actions
+└── docker-compose*.yml     # Docker (prod + dev)
+```
+
+Alias d'import: baseUrl configuré sur `src` (`components/...`, `sections/...`).
+
+## Variables d’environnement
+
+Copie `.env.example` vers `.env` si besoin. CRA exige le préfixe `REACT_APP_`.
+
+## Dépannage
+
+- **Port déjà utilisé**: change le port dans `docker-compose.yml` ou libère 8080/3000.
+- **Version Node**: utilise Node 20 LTS pour éviter des écarts de build.
+- **Cache npm**: en cas d'erreur, supprime `node_modules` et relance `npm install`.
