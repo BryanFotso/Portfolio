@@ -18,14 +18,16 @@ const Footer = () => {
         position: 'relative',
       }}
     >
-      <span style={{
-        background: 'linear-gradient(90deg, #007aff 0%, #af52de 100%)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-        fontWeight: 700,
-        fontSize: '1.08rem',
-      }}>
+      <span
+        style={{
+          background: 'linear-gradient(90deg, #007aff 0%, #af52de 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          fontWeight: 700,
+          fontSize: '1.08rem',
+        }}
+      >
         © {new Date().getFullYear()} Chris Bryan Fotso Tala
       </span>
       <span style={{ marginLeft: 8, color: '#8e8e93', fontWeight: 400 }}>
