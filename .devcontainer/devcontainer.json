@@ -1,0 +1,25 @@
+{
+  "name": "Portfolio (Dev Container)",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "mounts": ["type=volume,source=portfolio-node_modules,target=/workspace/node_modules"],
+  "containerEnv": {
+    "CHOKIDAR_USEPOLLING": "true",
+    "WATCHPACK_POLLING": "true"
+  },
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "React dev server" }
+  },
+
+  "remoteUser": "root",
+  "onCreateCommand": "chown -R node:node /workspace /workspace/node_modules",
+  "postCreateCommand": "su node -c \"npm ci\"",
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    }
+  }
+}
