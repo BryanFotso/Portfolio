@@ -1,20 +1,53 @@
 const Experience = () => {
   const experiences = [
     {
-      title: 'Data Engineer',
-      company: 'Freelance',
-      period: '2024 - Présent',
+      title: 'Consultant Data Engineer',
+      company: 'Capgemini',
+      period: '09/2024 – 09/2025',
+      location: 'Toulouse, France',
       description:
-        'Développement de pipelines de données, APIs et solutions cloud. Technologies: Python, FastAPI, Azure, Docker.',
-      technologies: ['Python', 'FastAPI', 'Azure', 'Docker', 'PostgreSQL'],
+        'Conception, développement et maintenance de pipelines de données ETL/ELT en environnement de production.',
+      highlights: [
+        'Collecte et transformation depuis bases relationnelles, APIs REST et fichiers plats',
+        'Pipelines de transformation avec Python (pandas) et SQL avancé',
+        'Orchestration via Airflow (DAGs, dépendances, scheduling)',
+        'Migration de pipelines vers des architectures basées sur dbt',
+        'Contrôles de qualité des données',
+        'Collaboration avec les Data Analysts pour exposer des datasets exploitables',
+        'Intégration continue via Azure DevOps et pipelines CI/CD',
+        'Documentation technique des pipelines et des flux de données',
+      ],
+      technologies: ['Python', 'Pandas', 'SQL', 'Airflow', 'dbt', 'Azure DevOps'],
     },
     {
-      title: 'Développeur Backend',
-      company: 'Projets personnels',
-      period: '2023 - 2024',
+      title: 'Data Engineer',
+      company: 'Gautier Semences',
+      period: '04/2024 – 08/2024',
+      location: 'Avignon, France',
+      description: 'Collecte, nettoyage et transformation de données issues de l’ERP Navision.',
+      highlights: [
+        'Requêtes SQL complexes pour l’alimentation de tables analytiques',
+        'Préparation des données pour l’intégration dans l’ERP Sage X3',
+        'Automatisation des traitements réduisant les délais de plusieurs heures à quelques minutes',
+        'Contrôles de cohérence et validation des données',
+        'Amélioration de la qualité et fiabilité des données métiers',
+        'Interaction régulière avec les équipes métiers',
+      ],
+      technologies: ['SQL', 'ERP Navision', 'ETL', 'Data Quality'],
+    },
+    {
+      title: 'Data Analyst',
+      company: 'FOTAGI',
+      period: '06/2022 – 08/2022',
+      location: 'Cameroun',
       description:
-        "Création d'applications web et APIs RESTful. Focus sur la qualité du code et les bonnes pratiques.",
-      technologies: ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Docker'],
+        'Développement de scripts Python et VBA pour automatiser des indicateurs de performance.',
+      highlights: [
+        'Migration de tableaux de bord Excel vers Power BI',
+        'Préparation et transformation de données pour analyses',
+        'Amélioration de la traçabilité et de la fiabilité des données',
+      ],
+      technologies: ['Python', 'VBA', 'Power BI', 'Excel'],
     },
   ];
 
@@ -113,6 +146,20 @@ const Experience = () => {
                       <i className="fas fa-building" style={{ marginRight: '0.5rem' }}></i>
                       {exp.company}
                     </div>
+                    <div
+                      style={{
+                        fontSize: '0.95rem',
+                        color: '#8e8e93',
+                        fontWeight: '500',
+                        marginTop: '0.35rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                      }}
+                    >
+                      <i className="fas fa-map-marker-alt" style={{ color: '#007aff' }}></i>
+                      {exp.location}
+                    </div>
                   </div>
 
                   <div
@@ -140,6 +187,41 @@ const Experience = () => {
                 >
                   {exp.description}
                 </p>
+
+                {/* Highlights */}
+                {exp.highlights && (
+                  <ul
+                    style={{
+                      color: '#8e8e93',
+                      fontSize: '0.98rem',
+                      lineHeight: 1.6,
+                      margin: 0,
+                      padding: 0,
+                      listStyle: 'none',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.5rem',
+                      marginBottom: '1.5rem',
+                    }}
+                  >
+                    {exp.highlights.map((item, itemIdx) => (
+                      <li
+                        key={itemIdx}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '0.6rem',
+                        }}
+                      >
+                        <i
+                          className="fas fa-check-circle"
+                          style={{ color: '#007aff', marginTop: '0.2rem' }}
+                        ></i>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 {/* Technologies */}
                 <div>

@@ -15,7 +15,7 @@ const contactInfo = [
   },
   {
     label: 'Localisation',
-    value: 'Toulouse, France',
+    value: 'Montpellier, France',
     icon: 'fas fa-map-marker-alt',
     color: '#af52de',
   },

@@ -476,6 +476,55 @@ body {
   margin-top: 3rem;
 }
 
+/* Education */
+.education-grid {
+  gap: 2.5rem;
+}
+
+.education-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  min-height: 220px;
+  padding: 2.5rem 2rem;
+  overflow: hidden;
+}
+
+.education-badge {
+  padding: 0.4rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  max-width: 75%;
+  white-space: nowrap;
+}
+
+.education-card {
+  padding-top: 3.5rem;
+}
+
+.education-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  margin-top: 0.2rem;
+}
+
+.education-list {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.98rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-buttons {
@@ -506,6 +555,28 @@ body {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .education-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .education-title {
+    font-size: 1.1rem;
+    margin-top: 2.2rem;
+  }
+
+  .education-list {
+    font-size: 0.95rem;
+  }
+
+  .education-item {
+    font-size: 0.95rem;
+  }
+
+  .education-badge {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -528,6 +599,18 @@ body {
   .hero-stat--wide {
     grid-column: auto;
     max-width: 240px;
+  }
+
+  .education-grid {
+    gap: 1.75rem;
+  }
+
+  .education-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .education-title {
+    font-size: 1.05rem;
   }
 }
 

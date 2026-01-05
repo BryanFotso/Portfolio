@@ -5,6 +5,7 @@ const certifications = [
     date: '2024',
     description:
       'Certification officielle sur la conception et la mise en œuvre de solutions de données sur Azure (Data Factory, Data Lake, Synapse, Databricks).',
+    link: 'https://learn.microsoft.com/fr-fr/users/fotsotalachrisbryan-6351/credentials/d319b1c8afd26f67',
     color: '#007aff',
     techs: [
       { name: 'Azure', icon: 'fab fa-microsoft' },
@@ -13,15 +14,42 @@ const certifications = [
     ],
   },
   {
-    title: 'Mastering Data Build Tool (dbt)',
-    issuer: 'Udemy',
-    date: '2023',
+    title: 'Microsoft Azure Fundamentals (AZ-900)',
+    issuer: 'Microsoft',
+    date: '2024',
     description:
-      "Formation avancée sur dbt, l'orchestration de transformations SQL et la modélisation de données moderne.",
+      'Certification de base sur le cloud Azure, les services fondamentaux et la sécurité.',
+    link: 'https://learn.microsoft.com/api/credentials/share/en-us/FOTSOTALAChrisBryan-6351/69F61393D42A9B0F?sharingId=64AB8BAE904A9F5B',
     color: '#af52de',
     techs: [
-      { name: 'dbt', icon: 'fas fa-database' },
-      { name: 'SQL', icon: 'fas fa-database' },
+      { name: 'Azure', icon: 'fab fa-microsoft' },
+      { name: 'Cloud', icon: 'fas fa-cloud' },
+    ],
+  },
+  {
+    title: 'Dataiku Advanced Designer',
+    issuer: 'Dataiku',
+    date: '2024',
+    description:
+      'Certification avancée sur la conception de projets data, automatisation et déploiement sur Dataiku.',
+    link: 'https://verify.skilljar.com/c/vhzhvb3pfhdd',
+    color: '#34c759',
+    techs: [
+      { name: 'Dataiku', icon: 'fas fa-brain' },
+      { name: 'Automation', icon: 'fas fa-cogs' },
+    ],
+  },
+  {
+    title: 'Dataiku Core Designer',
+    issuer: 'Dataiku',
+    date: '2023',
+    description:
+      'Certification sur les bases de la préparation, exploration et modélisation de données dans Dataiku.',
+    link: 'https://verify.skilljar.com/c/r8gwv2dz3pd5',
+    color: '#ff9500',
+    techs: [
+      { name: 'Dataiku', icon: 'fas fa-brain' },
+      { name: 'Data Prep', icon: 'fas fa-filter' },
     ],
   },
   {
@@ -142,6 +170,35 @@ const Certifications = () => {
                   </span>
                 ))}
               </div>
+              {cert.link && (
+                <div style={{ marginTop: '1.3rem' }}>
+                  <a
+                    href={cert.link}
+                    className="btn-outline"
+                    style={{
+                      borderColor: cert.color,
+                      color: cert.color,
+                      fontSize: '0.98rem',
+                      padding: '0.65rem 1.4rem',
+                      borderRadius: '14px',
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                      transition: 'all 0.3s',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = 'translateY(-2px) scale(1.02)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = 'translateY(0) scale(1)';
+                    }}
+                  >
+                    <i className="fas fa-external-link-alt"></i>
+                    Voir le certificat
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </div>
