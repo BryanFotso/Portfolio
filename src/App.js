@@ -12,6 +12,7 @@ import Skills from 'sections/Skills';
 function App() {
   return (
     <div
+      className="app"
       style={{
         minHeight: '100vh',
         background: 'linear-gradient(135deg, #f5f5f7 0%, #ffffff 50%, #f0f0f0 100%)',
