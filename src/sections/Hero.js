@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-content">
-        <h1>Chris Bryan Fotso Tala</h1>
+        <h1>Chris Fotso</h1>
         <div className="gradient-text">Data Engineer</div>
         <p>
           Spécialisé dans les architectures de données, le développement backend et les pratiques
@@ -29,7 +29,7 @@ const Hero = () => {
           }}
         >
           <a
-            href="https://linkedin.com/in/chris-bryan-fotso-tala"
+            href="https://www.linkedin.com/in/chris-fotso/"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -58,7 +58,7 @@ const Hero = () => {
           </a>
 
           <a
-            href="https://github.com/chris-bryan-fotso"
+            href="https://github.com/BryanFotso"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -87,109 +87,20 @@ const Hero = () => {
           </a>
         </div>
 
-        <div
-          style={{
-            marginTop: '3rem',
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '2rem',
-            flexWrap: 'wrap',
-          }}
-        >
-          <div
-            style={{
-              textAlign: 'center',
-              padding: '1rem',
-              background: 'rgba(255, 255, 255, 0.8)',
-              borderRadius: '16px',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              minWidth: '120px',
-            }}
-          >
-            <div
-              style={{
-                fontSize: '2rem',
-                fontWeight: '700',
-                color: '#007aff',
-                marginBottom: '0.5rem',
-              }}
-            >
-              1+
-            </div>
-            <div
-              style={{
-                fontSize: '0.9rem',
-                color: '#8e8e93',
-                fontWeight: '500',
-              }}
-            >
-              Années d'expérience
-            </div>
+        <div className="hero-stats">
+          <div className="hero-stat">
+            <div className="hero-stat-value">1+</div>
+            <div className="hero-stat-label">Années d'expérience</div>
           </div>
 
-          <div
-            style={{
-              textAlign: 'center',
-              padding: '1rem',
-              background: 'rgba(255, 255, 255, 0.8)',
-              borderRadius: '16px',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              minWidth: '120px',
-            }}
-          >
-            <div
-              style={{
-                fontSize: '2rem',
-                fontWeight: '700',
-                color: '#007aff',
-                marginBottom: '0.5rem',
-              }}
-            >
-              15+
-            </div>
-            <div
-              style={{
-                fontSize: '0.9rem',
-                color: '#8e8e93',
-                fontWeight: '500',
-              }}
-            >
-              Technologies maîtrisées
-            </div>
+          <div className="hero-stat">
+            <div className="hero-stat-value">15+</div>
+            <div className="hero-stat-label">Technologies maîtrisées</div>
           </div>
 
-          <div
-            style={{
-              textAlign: 'center',
-              padding: '1rem',
-              background: 'rgba(255, 255, 255, 0.8)',
-              borderRadius: '16px',
-              backdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              minWidth: '120px',
-            }}
-          >
-            <div
-              style={{
-                fontSize: '2rem',
-                fontWeight: '700',
-                color: '#007aff',
-                marginBottom: '0.5rem',
-              }}
-            >
-              5+
-            </div>
-            <div
-              style={{
-                fontSize: '0.9rem',
-                color: '#8e8e93',
-                fontWeight: '500',
-              }}
-            >
-              Projets livrés
-            </div>
+          <div className="hero-stat hero-stat--wide">
+            <div className="hero-stat-value">5+</div>
+            <div className="hero-stat-label">Projets livrés</div>
           </div>
         </div>
       </div>

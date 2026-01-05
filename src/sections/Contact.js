@@ -15,7 +15,7 @@ const contactInfo = [
   },
   {
     label: 'Localisation',
-    value: 'Toulouse, France',
+    value: 'Montpellier, France',
     icon: 'fas fa-map-marker-alt',
     color: '#af52de',
   },
@@ -25,13 +25,13 @@ const socialLinks = [
   {
     label: 'LinkedIn',
     icon: 'fab fa-linkedin',
-    url: 'https://linkedin.com/in/chris-bryan-fotso-tala',
+    url: 'https://www.linkedin.com/in/chris-fotso/',
     color: '#007aff',
   },
   {
     label: 'GitHub',
     icon: 'fab fa-github',
-    url: 'https://github.com/chris-bryan-fotso',
+    url: 'https://github.com/BryanFotso',
     color: '#1d1d1f',
   },
 ];
