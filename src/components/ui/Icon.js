@@ -3,6 +3,8 @@ const paths = {
   building: 'M3 21h18M6 21V5l6-3 6 3v16M9 9h1m-1 4h1m4-4h1m-1 4h1',
   chart: 'M4 19V9m6 10V5m6 14v-7m4 7H2',
   check: 'm5 12 4 4L19 6',
+  chevronLeft: 'm15 18-6-6 6-6',
+  chevronRight: 'm9 18 6-6-6-6',
   cloud: 'M17.5 19H7a5 5 0 1 1 1.7-9.7A6 6 0 0 1 20 12a3.5 3.5 0 0 1-2.5 7Z',
   code: 'm8 9-4 3 4 3m8-6 4 3-4 3m-2-9-4 12',
   download: 'M12 3v12m-5-5 5 5 5-5M5 21h14',
