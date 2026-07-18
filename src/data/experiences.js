@@ -2,7 +2,7 @@ const fr = [
   {
     title: 'Intégrateur de données',
     company: 'SIMPLICITI',
-    logo: 'https://www.simpliciti.fr/wp-content/uploads/Logo-Simpliciti.svg',
+    logo: 'company-logos/simpliciti.svg',
     period: '11/2025 – Présent',
     location: 'Montpellier, France',
     description:
@@ -19,7 +19,7 @@ const fr = [
   {
     title: 'Consultant Data Engineer',
     company: 'Capgemini – Sogeti',
-    logo: 'https://www.sogeti.com/wp-content/themes/sogeti2024/assets/images/sogeti-blue-new.svg',
+    logo: 'company-logos/sogeti.svg',
     period: '09/2024 – 09/2025',
     location: 'Toulouse, France',
     description:
@@ -46,7 +46,7 @@ const fr = [
   {
     title: 'Ingénieur Base de Données',
     company: 'Gautier Semences',
-    logo: 'https://www.gautiersemences.com/wp-content/uploads/2025/05/logo_gautier_semences_w.svg',
+    logo: 'company-logos/gautier-semences.svg',
     logoClass: 'experience-logo--gautier',
     period: '04/2024 – 08/2024',
     location: 'Avignon, France',

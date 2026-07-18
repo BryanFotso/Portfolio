@@ -17,7 +17,12 @@ const Certifications = () => {
       <HorizontalCarousel id="certifications-carousel" label={t.certifications.label}>
         {orderedCertifications.map((certification) => (
           <Card key={certification.title} className="certification-card">
-            <span className="period">{certification.date}</span>
+            <div className="certification-meta">
+              {certification.date && <span className="period">{certification.date}</span>}
+              {certification.status === 'inProgress' && (
+                <span className="certification-status">{t.certifications.inProgress}</span>
+              )}
+            </div>
             <h3>{certification.title}</h3>
             <p className="meta">{certification.issuer}</p>
             <p>{certification.description}</p>
@@ -28,7 +33,11 @@ const Certifications = () => {
             </div>
             {certification.link && (
               <div className="card-actions">
-                <ExternalLink href={certification.link}>{t.certifications.view}</ExternalLink>
+                <ExternalLink href={certification.link}>
+                  {certification.linkType === 'program'
+                    ? t.certifications.viewProgram
+                    : t.certifications.view}
+                </ExternalLink>
               </div>
             )}
           </Card>

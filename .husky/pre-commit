@@ -14,12 +14,14 @@ if ! command -v docker >/dev/null 2>&1; then
 fi
 
 repository_root=$(git rev-parse --show-toplevel)
+git_common_directory=$(git rev-parse --path-format=absolute --git-common-dir)
 
 docker build --target hooks --tag portfolio-hooks "$repository_root" >/dev/null
 
 exec docker run --rm \
   --user "$(id -u):$(id -g)" \
   --volume "$repository_root:/app" \
+  --volume "$git_common_directory:$git_common_directory" \
   --workdir /app \
   portfolio-hooks \
   ./node_modules/.bin/lint-staged

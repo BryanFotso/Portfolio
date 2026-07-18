@@ -843,6 +843,27 @@ a,
   margin-bottom: 1rem;
 }
 
+.certification-meta {
+  display: flex;
+  min-height: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.certification-status {
+  display: inline-flex;
+  width: max-content;
+  padding: 0.35rem 0.75rem;
+  color: var(--blue-dark);
+  background: rgba(0, 122, 255, 0.08);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
 .contact-card {
   max-width: 540px;
   margin: 0 auto;

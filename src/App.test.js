@@ -64,7 +64,7 @@ test('met en avant les projets GitHub sélectionnés', () => {
   expect(screen.getByRole('heading', { name: 'Portfolio Personnel' })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'Shooter (Pygame)' })).toBeInTheDocument();
   expect(screen.getByLabelText('Projets sélectionnés')).toHaveAttribute('id', 'projects-carousel');
-  expect(screen.getByLabelText('Certifications obtenues')).toHaveAttribute(
+  expect(screen.getByLabelText('Certifications et objectifs')).toHaveAttribute(
     'id',
     'certifications-carousel'
   );
@@ -73,12 +73,22 @@ test('met en avant les projets GitHub sélectionnés', () => {
 test('affiche les logos des entreprises et la certification Airflow', () => {
   renderApp();
 
-  expect(screen.getByRole('img', { name: 'SIMPLICITI' })).toBeInTheDocument();
+  expect(screen.getByRole('img', { name: 'SIMPLICITI' })).toHaveAttribute(
+    'src',
+    'company-logos/simpliciti.svg'
+  );
   expect(screen.getByRole('img', { name: 'Capgemini – Sogeti' })).toBeInTheDocument();
   expect(screen.getByRole('img', { name: 'Gautier Semences' })).toBeInTheDocument();
   expect(
     screen.getByRole('heading', { name: 'Astronomer Certification for Apache Airflow 3' })
   ).toBeInTheDocument();
+  expect(
+    screen.getByRole('heading', {
+      name: 'Microsoft Certified: Azure Data Fundamentals (DP-900)',
+    })
+  ).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: 'TOEIC Listening and Reading' })).toBeInTheDocument();
+  expect(screen.getByText('En préparation')).toBeInTheDocument();
 });
 
 test('permet de consulter le portfolio en anglais', async () => {

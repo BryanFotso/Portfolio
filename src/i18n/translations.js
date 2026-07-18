@@ -61,8 +61,10 @@ const translations = {
     education: { title: 'Formation' },
     certifications: {
       title: 'Certifications',
-      label: 'Certifications obtenues',
+      label: 'Certifications et objectifs',
       view: 'Voir le certificat',
+      viewProgram: 'Voir le programme',
+      inProgress: 'En préparation',
     },
     contact: {
       title: 'Contact',
@@ -141,8 +143,10 @@ const translations = {
     education: { title: 'Education' },
     certifications: {
       title: 'Certifications',
-      label: 'Earned certifications',
+      label: 'Certifications and goals',
       view: 'View certificate',
+      viewProgram: 'View program',
+      inProgress: 'In progress',
     },
     contact: {
       title: 'Contact',
@@ -221,8 +225,10 @@ const translations = {
     education: { title: 'Formación' },
     certifications: {
       title: 'Certificaciones',
-      label: 'Certificaciones obtenidas',
+      label: 'Certificaciones y objetivos',
       view: 'Ver certificado',
+      viewProgram: 'Ver programa',
+      inProgress: 'En preparación',
     },
     contact: {
       title: 'Contacto',
@@ -301,8 +307,10 @@ const translations = {
     education: { title: 'Ausbildung' },
     certifications: {
       title: 'Zertifizierungen',
-      label: 'Erworbene Zertifizierungen',
+      label: 'Zertifizierungen und Ziele',
       view: 'Zertifikat ansehen',
+      viewProgram: 'Programm ansehen',
+      inProgress: 'In Vorbereitung',
     },
     contact: {
       title: 'Kontakt',
@@ -373,7 +381,13 @@ const translations = {
       moreText: '我在每个项目中持续扩展这一技能基础。',
     },
     education: { title: '教育背景' },
-    certifications: { title: '认证', label: '已获得的认证', view: '查看证书' },
+    certifications: {
+      title: '认证',
+      label: '认证与目标',
+      view: '查看证书',
+      viewProgram: '查看认证项目',
+      inProgress: '准备中',
+    },
     contact: {
       title: '联系方式',
       phone: '电话',
