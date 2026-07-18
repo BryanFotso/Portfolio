@@ -10,7 +10,7 @@ test('affiche les informations principales du portfolio', () => {
   expect(screen.getByRole('heading', { name: 'Projets' })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: /télécharger mon cv/i })).toHaveAttribute(
     'href',
-    'Data_engineer_FR.pdf'
+    'Chris_Fotso_Data_Engineer_FR.pdf'
   );
 });
 
@@ -25,6 +25,19 @@ test('le menu mobile expose son état et sa cible', () => {
 
   expect(screen.getByRole('button', { name: 'Fermer le menu' })).toHaveAttribute(
     'aria-expanded',
+    'true'
+  );
+});
+
+test('permet de basculer entre les thèmes clair et sombre', async () => {
+  render(<App />);
+
+  const themeButton = screen.getByRole('button', { name: 'Activer le mode sombre' });
+  await userEvent.click(themeButton);
+
+  expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
+  expect(screen.getByRole('button', { name: 'Activer le mode clair' })).toHaveAttribute(
+    'aria-pressed',
     'true'
   );
 });
