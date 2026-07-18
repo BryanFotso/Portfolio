@@ -64,7 +64,9 @@ const translations = {
       label: 'Certifications et objectifs',
       view: 'Voir le certificat',
       viewProgram: 'Voir le programme',
+      earned: 'Obtenue',
       inProgress: 'En préparation',
+      credentialId: 'Identifiant de vérification',
     },
     contact: {
       title: 'Contact',
@@ -146,7 +148,9 @@ const translations = {
       label: 'Certifications and goals',
       view: 'View certificate',
       viewProgram: 'View program',
+      earned: 'Earned',
       inProgress: 'In progress',
+      credentialId: 'Verification ID',
     },
     contact: {
       title: 'Contact',
@@ -228,7 +232,9 @@ const translations = {
       label: 'Certificaciones y objetivos',
       view: 'Ver certificado',
       viewProgram: 'Ver programa',
+      earned: 'Obtenida',
       inProgress: 'En preparación',
+      credentialId: 'Identificador de verificación',
     },
     contact: {
       title: 'Contacto',
@@ -310,7 +316,9 @@ const translations = {
       label: 'Zertifizierungen und Ziele',
       view: 'Zertifikat ansehen',
       viewProgram: 'Programm ansehen',
+      earned: 'Erworben',
       inProgress: 'In Vorbereitung',
+      credentialId: 'Verifizierungs-ID',
     },
     contact: {
       title: 'Kontakt',
@@ -386,7 +394,9 @@ const translations = {
       label: '认证与目标',
       view: '查看证书',
       viewProgram: '查看认证项目',
+      earned: '已获得',
       inProgress: '准备中',
+      credentialId: '验证编号',
     },
     contact: {
       title: '联系方式',

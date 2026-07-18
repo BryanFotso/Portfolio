@@ -864,6 +864,22 @@ a,
   font-weight: 800;
 }
 
+.certification-status--earned {
+  color: #18794e;
+  background: rgba(24, 121, 78, 0.1);
+  border-color: rgba(24, 121, 78, 0.25);
+}
+
+.credential-id {
+  margin-top: -0.35rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.credential-id code {
+  overflow-wrap: anywhere;
+}
+
 .contact-card {
   max-width: 540px;
   margin: 0 auto;

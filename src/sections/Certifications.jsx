@@ -18,26 +18,41 @@ const Certifications = () => {
         {orderedCertifications.map((certification) => (
           <Card key={certification.title} className="certification-card">
             <div className="certification-meta">
-              {certification.date && <span className="period">{certification.date}</span>}
-              {certification.status === 'inProgress' && (
-                <span className="certification-status">{t.certifications.inProgress}</span>
-              )}
+              {certification.earnedAt && <span className="period">{certification.earnedAt}</span>}
+              {certification.score && <span className="period">{certification.score}</span>}
+              <span
+                className={`certification-status certification-status--${certification.status}`}
+              >
+                {certification.status === 'earned'
+                  ? t.certifications.earned
+                  : t.certifications.inProgress}
+              </span>
             </div>
             <h3>{certification.title}</h3>
             <p className="meta">{certification.issuer}</p>
+            {certification.credentialId && (
+              <p className="credential-id">
+                {t.certifications.credentialId}: <code>{certification.credentialId}</code>
+              </p>
+            )}
             <p>{certification.description}</p>
             <div className="tag-list">
               {certification.technologies.map((technology) => (
                 <TechTag key={technology}>{technology}</TechTag>
               ))}
             </div>
-            {certification.link && (
+            {(certification.credentialUrl || certification.programUrl) && (
               <div className="card-actions">
-                <ExternalLink href={certification.link}>
-                  {certification.linkType === 'program'
-                    ? t.certifications.viewProgram
-                    : t.certifications.view}
-                </ExternalLink>
+                {certification.credentialUrl && (
+                  <ExternalLink href={certification.credentialUrl}>
+                    {t.certifications.view}
+                  </ExternalLink>
+                )}
+                {certification.programUrl && (
+                  <ExternalLink href={certification.programUrl}>
+                    {t.certifications.viewProgram}
+                  </ExternalLink>
+                )}
               </div>
             )}
           </Card>

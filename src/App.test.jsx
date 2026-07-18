@@ -1,7 +1,8 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import App from './App';
+import certifications from 'data/certifications';
 import { LanguageProvider } from 'i18n/LanguageContext';
 
 const renderApp = () =>
@@ -88,15 +89,37 @@ test('affiche les logos des entreprises et la certification Airflow', () => {
   );
   expect(screen.getByRole('img', { name: 'Capgemini – Sogeti' })).toBeInTheDocument();
   expect(screen.getByRole('img', { name: 'Gautier Semences' })).toBeInTheDocument();
-  expect(
-    screen.getByRole('heading', { name: 'Astronomer Certification for Apache Airflow 3' })
-  ).toBeInTheDocument();
+  const airflowCard = screen
+    .getByRole('heading', { name: 'Astronomer Certification for Apache Airflow 3' })
+    .closest('.certification-card');
+  expect(within(airflowCard).getByText('Obtenue')).toBeInTheDocument();
+  expect(within(airflowCard).getByRole('link', { name: /voir le programme/i })).toHaveAttribute(
+    'href',
+    'https://academy.astronomer.io/page/astronomer-certification'
+  );
+  expect(within(airflowCard).queryByRole('link', { name: /voir le certificat/i })).toBeNull();
+
+  const azureCard = screen
+    .getByRole('heading', { name: 'Microsoft Azure Data Engineer Associate' })
+    .closest('.certification-card');
+  expect(within(azureCard).getByText(/d319b1c8afd26f67/i)).toBeInTheDocument();
+  expect(within(azureCard).getByRole('link', { name: /voir le certificat/i })).toHaveAttribute(
+    'href',
+    expect.stringContaining('/credentials/d319b1c8afd26f67')
+  );
   expect(
     screen.getByRole('heading', {
       name: 'Microsoft Certified: Azure Data Fundamentals (DP-900)',
     })
   ).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'TOEIC Listening and Reading' })).toBeInTheDocument();
+  const toeicCard = screen
+    .getByRole('heading', { name: 'TOEIC Listening and Reading' })
+    .closest('.certification-card');
+  expect(within(toeicCard).getByText('950 / 990')).toBeInTheDocument();
+  expect(within(toeicCard).getByRole('link', { name: /voir le programme/i })).toHaveAttribute(
+    'href',
+    'https://www.etsglobal.org/fr/en/test-type-family/toeic-listening-and-reading-test'
+  );
   expect(screen.getByText('En préparation')).toBeInTheDocument();
 });
 
@@ -134,4 +157,24 @@ test.each([
 
   expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
   expect(document.documentElement).toHaveAttribute('lang', locale);
+});
+
+test('conserve un modèle de certification explicite dans toutes les langues', () => {
+  Object.values(certifications).forEach((localizedCertifications) => {
+    localizedCertifications.forEach((certification) => {
+      expect(['earned', 'inProgress']).toContain(certification.status);
+      expect(certification).not.toHaveProperty('link');
+      expect(certification).not.toHaveProperty('linkType');
+      expect(certification).not.toHaveProperty('date');
+
+      if (certification.credentialUrl) {
+        expect(certification.credentialId).toBeTruthy();
+      }
+
+      if (certification.status === 'inProgress') {
+        expect(certification.credentialUrl).toBeUndefined();
+        expect(certification.programUrl).toBeTruthy();
+      }
+    });
+  });
 });
