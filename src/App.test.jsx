@@ -2,7 +2,6 @@ import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import App from './App';
-import certifications from 'data/certifications';
 import { LanguageProvider } from 'i18n/LanguageContext';
 
 const renderApp = () =>
@@ -157,24 +156,4 @@ test.each([
 
   expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
   expect(document.documentElement).toHaveAttribute('lang', locale);
-});
-
-test('conserve un modèle de certification explicite dans toutes les langues', () => {
-  Object.values(certifications).forEach((localizedCertifications) => {
-    localizedCertifications.forEach((certification) => {
-      expect(['earned', 'inProgress']).toContain(certification.status);
-      expect(certification).not.toHaveProperty('link');
-      expect(certification).not.toHaveProperty('linkType');
-      expect(certification).not.toHaveProperty('date');
-
-      if (certification.credentialUrl) {
-        expect(certification.credentialId).toBeTruthy();
-      }
-
-      if (certification.status === 'inProgress') {
-        expect(certification.credentialUrl).toBeUndefined();
-        expect(certification.programUrl).toBeTruthy();
-      }
-    });
-  });
 });

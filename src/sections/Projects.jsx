@@ -3,18 +3,19 @@ import ExternalLink from 'components/ui/ExternalLink';
 import HorizontalCarousel from 'components/ui/HorizontalCarousel';
 import Section from 'components/ui/Section';
 import TechTag from 'components/ui/TechTag';
-import projects from 'data/projects';
+import { getProjects } from 'data/projects';
 import { useLanguage } from 'i18n/LanguageContext';
 
 const Projects = () => {
   const { language, t } = useLanguage();
+  const projects = getProjects(language);
 
   return (
     <Section id="projects" title={t.projects.title}>
       <HorizontalCarousel id="projects-carousel" label={t.projects.label}>
-        {projects[language].map((project) => (
+        {projects.map((project) => (
           <Card
-            key={project.title}
+            key={project.id}
             className={`project-card ${project.featured ? 'project-card--featured' : ''}`}
           >
             <div className="project-card-header">

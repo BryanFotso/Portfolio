@@ -2,17 +2,18 @@ import Card from 'components/ui/Card';
 import Icon from 'components/ui/Icon';
 import Section from 'components/ui/Section';
 import TechTag from 'components/ui/TechTag';
-import experiences from 'data/experiences';
+import { getExperiences } from 'data/experiences';
 import { useLanguage } from 'i18n/LanguageContext';
 
 const Experience = () => {
   const { language, t } = useLanguage();
+  const experiences = getExperiences(language);
 
   return (
     <Section id="experience" title={t.experience.title}>
       <div className="timeline">
-        {experiences[language].map((experience) => (
-          <div key={`${experience.company}-${experience.period}`} className="timeline-item">
+        {experiences.map((experience) => (
+          <div key={experience.id} className="timeline-item">
             <Card className="experience-card">
               <header className="experience-header">
                 <div className="experience-identity">

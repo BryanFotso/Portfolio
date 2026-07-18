@@ -3,12 +3,12 @@ import ExternalLink from 'components/ui/ExternalLink';
 import HorizontalCarousel from 'components/ui/HorizontalCarousel';
 import Section from 'components/ui/Section';
 import TechTag from 'components/ui/TechTag';
-import certifications from 'data/certifications';
+import { getCertifications } from 'data/certifications';
 import { useLanguage } from 'i18n/LanguageContext';
 
 const Certifications = () => {
   const { language, t } = useLanguage();
-  const orderedCertifications = [...certifications[language]].sort(
+  const orderedCertifications = getCertifications(language).sort(
     (first, second) => Number(Boolean(second.featured)) - Number(Boolean(first.featured))
   );
 
@@ -16,7 +16,7 @@ const Certifications = () => {
     <Section id="certifications" title={t.certifications.title}>
       <HorizontalCarousel id="certifications-carousel" label={t.certifications.label}>
         {orderedCertifications.map((certification) => (
-          <Card key={certification.title} className="certification-card">
+          <Card key={certification.id} className="certification-card">
             <div className="certification-meta">
               {certification.earnedAt && <span className="period">{certification.earnedAt}</span>}
               {certification.score && <span className="period">{certification.score}</span>}

@@ -55,6 +55,17 @@ npm run test:watch
 
 Les alias d'import sont configurés dans `vite.config.js` et documentés dans `jsconfig.json` (`components/...`, `sections/...`, etc.).
 
+## Contenu multilingue
+
+Les fichiers de `src/data/` séparent les définitions invariantes des textes localisés :
+
+- chaque entrée possède un identifiant stable (`simpliciti`, `rnic-copro-analytics`, `airflow-3`, etc.) ;
+- logos, URLs, technologies, établissements et dates ne sont déclarés qu'une fois ;
+- les dictionnaires `*Content` contiennent uniquement les textes propres à chaque langue ;
+- les fonctions `getProjects`, `getExperiences`, `getCertifications`, `getEducation` et `getSkillCategories` assemblent les données pour l'affichage.
+
+Lors de l'ajout d'une entrée, renseigne son identifiant dans les cinq langues. Les tests de `src/data/content.test.js` vérifient automatiquement la parité des identifiants et les champs obligatoires.
+
 ## Variables d’environnement
 
 Copie `.env.example` vers `.env` si besoin. Les variables exposées au navigateur doivent utiliser le préfixe `VITE_`. `VITE_BASE_PATH` permet de remplacer le chemin public utilisé au build.

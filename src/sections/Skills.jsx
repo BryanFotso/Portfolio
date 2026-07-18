@@ -2,17 +2,19 @@ import Card from 'components/ui/Card';
 import Icon from 'components/ui/Icon';
 import Section from 'components/ui/Section';
 import TechTag from 'components/ui/TechTag';
-import { additionalSkills, skillCategories } from 'data/skills';
+import { getAdditionalSkills, getSkillCategories } from 'data/skills';
 import { useLanguage } from 'i18n/LanguageContext';
 
 const Skills = () => {
   const { language, t } = useLanguage();
+  const skillCategories = getSkillCategories(language);
+  const additionalSkills = getAdditionalSkills(language);
 
   return (
     <Section id="skills" title={t.skills.title}>
       <div className="skills-grid">
-        {skillCategories[language].map((category) => (
-          <Card key={category.title} className="skill-card">
+        {skillCategories.map((category) => (
+          <Card key={category.id} className="skill-card">
             <div className="card-heading">
               <span className="icon-badge">
                 <Icon name={category.icon} />
@@ -33,8 +35,8 @@ const Skills = () => {
         <h3>{t.skills.moreTitle}</h3>
         <p>{t.skills.moreText}</p>
         <div className="tag-list tag-list-centered">
-          {additionalSkills[language].map((skill) => (
-            <TechTag key={skill}>{skill}</TechTag>
+          {additionalSkills.map((skill) => (
+            <TechTag key={skill.id}>{skill.label}</TechTag>
           ))}
         </div>
       </Card>
