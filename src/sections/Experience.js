@@ -15,14 +15,19 @@ const Experience = () => {
           <div key={`${experience.company}-${experience.period}`} className="timeline-item">
             <Card className="experience-card">
               <header className="experience-header">
-                <div>
-                  <h3>{experience.title}</h3>
-                  <p className="experience-company">
-                    <Icon name="building" /> {experience.company}
-                  </p>
-                  <p className="meta">
-                    <Icon name="location" /> {experience.location}
-                  </p>
+                <div className="experience-identity">
+                  <span className={`experience-logo ${experience.logoClass || ''}`}>
+                    <img src={experience.logo} alt={experience.company} loading="lazy" />
+                  </span>
+                  <div>
+                    <h3>{experience.title}</h3>
+                    <p className="experience-company">
+                      <Icon name="building" /> {experience.company}
+                    </p>
+                    <p className="meta">
+                      <Icon name="location" /> {experience.location}
+                    </p>
+                  </div>
                 </div>
                 <span className="period">{experience.period}</span>
               </header>

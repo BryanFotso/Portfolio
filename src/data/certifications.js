@@ -40,6 +40,16 @@ const fr = [
       'Analyse, visualisation et manipulation avancée des données avec Python et pandas.',
     technologies: ['Python', 'Pandas'],
   },
+  {
+    title: 'Astronomer Certification for Apache Airflow 3',
+    issuer: 'Astronomer',
+    date: '2026',
+    description:
+      'Maîtrise des fondamentaux d’Apache Airflow 3, de la création de DAGs et de l’orchestration de pipelines de données.',
+    technologies: ['Apache Airflow 3', 'DAGs', 'Data Orchestration'],
+    link: 'https://academy.astronomer.io/page/astronomer-certification',
+    featured: true,
+  },
 ];
 
 const en = [
@@ -54,6 +64,11 @@ const en = [
   {
     ...fr[4],
     description: 'Advanced data analysis, visualization and manipulation with Python and pandas.',
+  },
+  {
+    ...fr[5],
+    description:
+      'Mastery of Apache Airflow 3 fundamentals, DAG authoring and data pipeline orchestration.',
   },
 ];
 
@@ -72,6 +87,11 @@ const es = [
   {
     ...fr[4],
     description: 'Análisis, visualización y manipulación avanzada de datos con Python y pandas.',
+  },
+  {
+    ...fr[5],
+    description:
+      'Dominio de los fundamentos de Apache Airflow 3, la creación de DAGs y la orquestación de pipelines de datos.',
   },
 ];
 
@@ -92,6 +112,11 @@ const de = [
     description:
       'Fortgeschrittene Datenanalyse, Visualisierung und Verarbeitung mit Python und pandas.',
   },
+  {
+    ...fr[5],
+    description:
+      'Beherrschung der Grundlagen von Apache Airflow 3, der DAG-Erstellung und der Orchestrierung von Datenpipelines.',
+  },
 ];
 
 const zh = [
@@ -103,6 +128,7 @@ const zh = [
   { ...fr[2], description: '使用 Dataiku 设计、自动化并部署数据项目。' },
   { ...fr[3], description: '使用 Dataiku 进行数据准备、探索和建模。' },
   { ...fr[4], description: '使用 Python 和 pandas 进行高级数据分析、可视化和处理。' },
+  { ...fr[5], description: '掌握 Apache Airflow 3 基础、DAG 编写和数据管道编排。' },
 ];
 
 const certifications = { fr, en, es, de, zh };

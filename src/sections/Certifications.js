@@ -8,11 +8,14 @@ import { useLanguage } from 'i18n/LanguageContext';
 
 const Certifications = () => {
   const { language, t } = useLanguage();
+  const orderedCertifications = [...certifications[language]].sort(
+    (first, second) => Number(Boolean(second.featured)) - Number(Boolean(first.featured))
+  );
 
   return (
     <Section id="certifications" title={t.certifications.title}>
       <HorizontalCarousel id="certifications-carousel" label={t.certifications.label}>
-        {certifications[language].map((certification) => (
+        {orderedCertifications.map((certification) => (
           <Card key={certification.title} className="certification-card">
             <span className="period">{certification.date}</span>
             <h3>{certification.title}</h3>

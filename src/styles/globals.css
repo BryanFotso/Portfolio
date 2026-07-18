@@ -727,6 +727,36 @@ a,
   gap: 1rem;
 }
 
+.experience-identity {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.experience-logo {
+  display: grid;
+  width: 5.5rem;
+  height: 3.5rem;
+  padding: 0.55rem;
+  flex: none;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  place-items: center;
+}
+
+.experience-logo--gautier {
+  background: #174b3a;
+}
+
+.experience-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .experience-header h3 {
   margin-bottom: 0.35rem;
 }
@@ -956,6 +986,10 @@ a,
 
   .experience-header {
     flex-direction: column-reverse;
+  }
+
+  .experience-identity {
+    width: 100%;
   }
 
   .timeline-item {

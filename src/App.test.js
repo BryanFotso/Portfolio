@@ -70,6 +70,17 @@ test('met en avant les projets GitHub sélectionnés', () => {
   );
 });
 
+test('affiche les logos des entreprises et la certification Airflow', () => {
+  renderApp();
+
+  expect(screen.getByRole('img', { name: 'SIMPLICITI' })).toBeInTheDocument();
+  expect(screen.getByRole('img', { name: 'Capgemini – Sogeti' })).toBeInTheDocument();
+  expect(screen.getByRole('img', { name: 'Gautier Semences' })).toBeInTheDocument();
+  expect(
+    screen.getByRole('heading', { name: 'Astronomer Certification for Apache Airflow 3' })
+  ).toBeInTheDocument();
+});
+
 test('permet de consulter le portfolio en anglais', async () => {
   renderApp();
 
