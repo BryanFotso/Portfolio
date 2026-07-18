@@ -2,9 +2,17 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import App from './App';
+import { LanguageProvider } from 'i18n/LanguageContext';
+
+const renderApp = () =>
+  render(
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
+  );
 
 test('affiche les informations principales du portfolio', () => {
-  render(<App />);
+  renderApp();
 
   expect(screen.getByRole('heading', { level: 1, name: 'Chris Fotso' })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'Projets' })).toBeInTheDocument();
@@ -19,7 +27,7 @@ test('affiche les informations principales du portfolio', () => {
 });
 
 test('le menu mobile expose son état et sa cible', () => {
-  render(<App />);
+  renderApp();
 
   const menuButton = screen.getByRole('button', { name: 'Ouvrir le menu' });
   expect(menuButton).toHaveAttribute('aria-controls', 'mobile-navigation');
@@ -34,7 +42,7 @@ test('le menu mobile expose son état et sa cible', () => {
 });
 
 test('permet de basculer entre les thèmes clair et sombre', async () => {
-  render(<App />);
+  renderApp();
 
   const themeButton = screen.getByRole('button', { name: 'Activer le mode sombre' });
   await userEvent.click(themeButton);
@@ -47,7 +55,7 @@ test('permet de basculer entre les thèmes clair et sombre', async () => {
 });
 
 test('met en avant les projets GitHub sélectionnés', () => {
-  render(<App />);
+  renderApp();
 
   expect(screen.getByRole('heading', { name: 'RNIC Copro Analytics' })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: 'Price Comparator' })).toBeInTheDocument();
@@ -60,4 +68,15 @@ test('met en avant les projets GitHub sélectionnés', () => {
     'id',
     'certifications-carousel'
   );
+});
+
+test('permet de consulter le portfolio en anglais', async () => {
+  renderApp();
+
+  await userEvent.click(screen.getByRole('button', { name: 'Anglais' }));
+
+  expect(screen.getByRole('heading', { name: 'Projects' })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /contact me/i })).toBeInTheDocument();
+  expect(document.documentElement).toHaveAttribute('lang', 'en');
+  expect(window.localStorage.getItem('portfolio-language')).toBe('en');
 });

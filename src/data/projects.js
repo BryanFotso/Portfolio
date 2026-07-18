@@ -1,4 +1,4 @@
-const projects = [
+const fr = [
   {
     title: 'RNIC Copro Analytics',
     category: 'Data Engineering · Projet phare',
@@ -60,5 +60,55 @@ const projects = [
     repository: 'https://github.com/BryanFotso/SHOOTER',
   },
 ];
+
+const en = [
+  {
+    ...fr[0],
+    category: 'Data Engineering · Featured project',
+    description:
+      'End-to-end analytics pipeline to study changes in French condominiums using RNIC open data, with bronze and silver layer modeling.',
+  },
+  {
+    ...fr[1],
+    category: 'Data Collection · Web application',
+    description:
+      'Multi-source price comparison platform using Scrapy for e-commerce product collection, MySQL storage and a web interface highlighting the best deals.',
+  },
+  {
+    ...fr[2],
+    category: 'DevOps · Infrastructure as Code',
+    description:
+      'Idempotent toolbox for installing and configuring DevOps tools on Ubuntu/Debian, organized into roles and driven by environments.',
+  },
+  {
+    ...fr[3],
+    category: 'DevOps · Local environment',
+    description:
+      'Collection of ready-to-use Docker Compose stacks for running open-source tools on a shared network with persistent volumes and environment-based configuration.',
+  },
+  {
+    ...fr[4],
+    category: 'Team project · Data Platform',
+    description:
+      'Open-source web application for preparing, analyzing and visualizing data, with a Flask backend, React frontend and MySQL storage.',
+    contribution:
+      'Backend development, file and log management, multi-format processing and platform containerization.',
+  },
+  {
+    ...fr[5],
+    title: 'Personal Portfolio',
+    category: 'Frontend · Personal Branding',
+    description:
+      'Responsive portfolio designed to showcase my profile, experience and work through an accessible interface and a complete CI/CD pipeline.',
+  },
+  {
+    ...fr[6],
+    category: 'Python development · 2D game',
+    description:
+      '2D game built with Pygame, featuring collision handling, a scoring system and visual effects.',
+  },
+];
+
+const projects = { fr, en };
 
 export default projects;

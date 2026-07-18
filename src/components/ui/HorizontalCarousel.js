@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import Icon from 'components/ui/Icon';
+import { useLanguage } from 'i18n/LanguageContext';
 
 const HorizontalCarousel = ({ id, label, children }) => {
   const trackRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const { t } = useLanguage();
 
   const updateControls = useCallback(() => {
     const track = trackRef.current;
@@ -47,12 +49,12 @@ const HorizontalCarousel = ({ id, label, children }) => {
   return (
     <div className="carousel">
       <div className="carousel-toolbar">
-        <p className="carousel-hint">Faites glisser pour découvrir la suite</p>
-        <div className="carousel-controls" aria-label={`Navigation du carrousel ${label}`}>
+        <p className="carousel-hint">{t.carousel.hint}</p>
+        <div className="carousel-controls" aria-label={`${t.carousel.navigation} ${label}`}>
           <button
             type="button"
             className="carousel-button"
-            aria-label="Afficher les éléments précédents"
+            aria-label={t.carousel.previous}
             aria-controls={id}
             disabled={!canScrollLeft}
             onClick={() => scroll(-1)}
@@ -62,7 +64,7 @@ const HorizontalCarousel = ({ id, label, children }) => {
           <button
             type="button"
             className="carousel-button"
-            aria-label="Afficher les éléments suivants"
+            aria-label={t.carousel.next}
             aria-controls={id}
             disabled={!canScrollRight}
             onClick={() => scroll(1)}

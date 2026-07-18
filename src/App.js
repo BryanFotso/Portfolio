@@ -9,14 +9,16 @@ import Hero from 'sections/Hero';
 import Projects from 'sections/Projects';
 import Skills from 'sections/Skills';
 import useTheme from 'hooks/useTheme';
+import { useLanguage } from 'i18n/LanguageContext';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
+  const { t } = useLanguage();
 
   return (
     <div className="app">
       <a className="skip-link" href="#main-content">
-        Aller au contenu principal
+        {t.skipLink}
       </a>
       <Navbar theme={theme} onThemeToggle={toggleTheme} />
       <main id="main-content">

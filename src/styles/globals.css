@@ -161,6 +161,36 @@ a,
   gap: 0.4rem;
 }
 
+.language-switcher {
+  display: inline-flex;
+  padding: 0.2rem;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  background: var(--surface);
+}
+
+.language-button {
+  min-width: 2.2rem;
+  min-height: 1.95rem;
+  padding: 0.25rem 0.45rem;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.language-button:hover,
+.language-button.is-active {
+  color: #fff;
+  background: var(--blue);
+}
+
 .theme-toggle,
 .navbar-burger {
   display: inline-flex;
@@ -182,7 +212,9 @@ a,
   background: rgba(0, 122, 255, 0.08);
   font-size: 0.8rem;
   font-weight: 700;
-  transition: background 160ms ease, border-color 160ms ease;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
 }
 
 .theme-toggle:hover {
@@ -885,6 +917,14 @@ a,
 }
 
 @media (max-width: 700px) {
+  .theme-toggle-label {
+    display: none;
+  }
+
+  .language-button {
+    min-width: 2rem;
+    padding-inline: 0.35rem;
+  }
   .hero {
     min-height: auto;
     padding-top: 8rem;

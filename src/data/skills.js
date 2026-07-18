@@ -1,4 +1,4 @@
-export const skillCategories = [
+const categoriesFr = [
   {
     title: 'Langages & Frameworks',
     icon: 'code',
@@ -21,7 +21,14 @@ export const skillCategories = [
   },
 ];
 
-export const additionalSkills = [
+const categoriesEn = categoriesFr.map((category, index) => ({
+  ...category,
+  title: ['Languages & Frameworks', 'DevOps & Cloud', 'Data & Analytics', 'Testing & Quality'][
+    index
+  ],
+}));
+
+const additionalFr = [
   'Machine Learning',
   'API Design',
   'Microservices',
@@ -33,3 +40,19 @@ export const additionalSkills = [
   'Mentoring',
   'Problem Solving',
 ];
+
+const additionalEn = [
+  'Machine Learning',
+  'API Design',
+  'Microservices',
+  'Data Modeling',
+  'Performance Optimization',
+  'Security Best Practices',
+  'Agile/Scrum',
+  'Technical Writing',
+  'Mentoring',
+  'Problem Solving',
+];
+
+export const skillCategories = { fr: categoriesFr, en: categoriesEn };
+export const additionalSkills = { fr: additionalFr, en: additionalEn };

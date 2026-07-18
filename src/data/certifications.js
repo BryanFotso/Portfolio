@@ -1,4 +1,4 @@
-const certifications = [
+const fr = [
   {
     title: 'Microsoft Azure Data Engineer Associate',
     issuer: 'Microsoft',
@@ -41,5 +41,22 @@ const certifications = [
     technologies: ['Python', 'Pandas'],
   },
 ];
+
+const en = [
+  {
+    ...fr[0],
+    description:
+      'Design and implementation of data solutions with Data Factory, Data Lake, Synapse and Databricks.',
+  },
+  { ...fr[1], description: 'Fundamentals of Azure cloud services, architecture and security.' },
+  { ...fr[2], description: 'Data project design, automation and deployment with Dataiku.' },
+  { ...fr[3], description: 'Data preparation, exploration and modeling with Dataiku.' },
+  {
+    ...fr[4],
+    description: 'Advanced data analysis, visualization and manipulation with Python and pandas.',
+  },
+];
+
+const certifications = { fr, en };
 
 export default certifications;

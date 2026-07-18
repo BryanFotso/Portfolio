@@ -1,58 +1,55 @@
 import ExternalLink from 'components/ui/ExternalLink';
 import Icon from 'components/ui/Icon';
 import { profile, socialLinks } from 'data/profile';
+import { useLanguage } from 'i18n/LanguageContext';
 
-const stats = [
-  { value: '1+', label: "Années d'expérience" },
-  { value: '15+', label: 'Technologies maîtrisées' },
-  { value: '5+', label: 'Projets livrés' },
-];
+const Hero = () => {
+  const { language, t } = useLanguage();
+  const stats = ['1+', '15+', '5+'].map((value, index) => ({ value, label: t.hero.stats[index] }));
 
-const Hero = () => (
-  <section id="home" className="hero" aria-labelledby="hero-title">
-    <div className="hero-content">
-      <p className="eyebrow">Portfolio</p>
-      <h1 id="hero-title">{profile.shortName}</h1>
-      <p className="hero-role gradient-text">{profile.role}</p>
-      <p className="hero-intro">
-        Spécialisé dans les architectures de données, le développement backend et les pratiques
-        DevOps. Je transforme les données en solutions fiables et actionnables.
-      </p>
+  return (
+    <section id="home" className="hero" aria-labelledby="hero-title">
+      <div className="hero-content">
+        <p className="eyebrow">Portfolio</p>
+        <h1 id="hero-title">{profile.shortName}</h1>
+        <p className="hero-role gradient-text">{profile.role}</p>
+        <p className="hero-intro">{t.hero.intro}</p>
 
-      <div className="hero-buttons">
-        <a href={`mailto:${profile.email}`} className="btn-primary">
-          Me contacter <Icon name="email" />
-        </a>
-        <ExternalLink href={profile.resume} download>
-          Télécharger mon CV
-        </ExternalLink>
-      </div>
-
-      <div className="social-links" aria-label="Réseaux sociaux">
-        {socialLinks.map((social) => (
-          <a
-            key={social.label}
-            href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-link"
-            aria-label={`${social.label} de ${profile.shortName}`}
-          >
-            <Icon name={social.icon} />
+        <div className="hero-buttons">
+          <a href={`mailto:${profile.email}`} className="btn-primary">
+            {t.hero.contact} <Icon name="email" />
           </a>
-        ))}
-      </div>
+          <ExternalLink href={profile.resume} download>
+            {t.hero.resume}
+          </ExternalLink>
+        </div>
 
-      <dl className="hero-stats">
-        {stats.map((stat) => (
-          <div key={stat.label} className="hero-stat">
-            <dt className="hero-stat-label">{stat.label}</dt>
-            <dd className="hero-stat-value">{stat.value}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  </section>
-);
+        <div className="social-links" aria-label={t.hero.social}>
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-link"
+              aria-label={`${social.label} ${language === 'fr' ? 'de' : 'of'} ${profile.shortName}`}
+            >
+              <Icon name={social.icon} />
+            </a>
+          ))}
+        </div>
+
+        <dl className="hero-stats">
+          {stats.map((stat) => (
+            <div key={stat.label} className="hero-stat">
+              <dt className="hero-stat-label">{stat.label}</dt>
+              <dd className="hero-stat-value">{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+  );
+};
 
 export default Hero;
