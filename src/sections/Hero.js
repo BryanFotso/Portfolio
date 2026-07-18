@@ -20,7 +20,7 @@ const Hero = () => (
       </p>
 
       <div className="hero-buttons">
-        <a href="#contact" className="btn-primary">
+        <a href={`mailto:${profile.email}`} className="btn-primary">
           Me contacter <Icon name="email" />
         </a>
         <ExternalLink href={profile.resume} download>
