@@ -1,3 +1,7 @@
+FROM node:20-alpine AS hooks
+RUN apk add --no-cache git
+WORKDIR /app
+
 FROM node:20-alpine AS build
 WORKDIR /app
 

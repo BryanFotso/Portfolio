@@ -1,4 +1,25 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged
+set -e
+
+node_major=$(node -p "process.versions.node.split('.')[0]" 2>/dev/null || printf '0')
+
+if [ "$node_major" -ge 20 ]; then
+  exec ./node_modules/.bin/lint-staged
+fi
+
+if ! command -v docker >/dev/null 2>&1; then
+  echo "Le hook pre-commit requiert Node.js 20+ ou Docker." >&2
+  exit 1
+fi
+
+repository_root=$(git rev-parse --show-toplevel)
+
+docker build --target hooks --tag portfolio-hooks "$repository_root" >/dev/null
+
+exec docker run --rm \
+  --user "$(id -u):$(id -g)" \
+  --volume "$repository_root:/app" \
+  --workdir /app \
+  portfolio-hooks \
+  ./node_modules/.bin/lint-staged
