@@ -7,7 +7,7 @@ const LanguageContext = createContext(null);
 
 const getInitialLanguage = () => {
   const savedLanguage = window.localStorage.getItem(STORAGE_KEY);
-  if (savedLanguage === 'fr' || savedLanguage === 'en') return savedLanguage;
+  if (['fr', 'en', 'es', 'de', 'zh'].includes(savedLanguage)) return savedLanguage;
   return 'fr';
 };
 

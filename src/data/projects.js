@@ -109,6 +109,139 @@ const en = [
   },
 ];
 
-const projects = { fr, en };
+const es = [
+  {
+    ...fr[0],
+    category: 'Data Engineering · Proyecto destacado',
+    description:
+      'Pipeline analítico end-to-end para estudiar la evolución de las comunidades de propietarios francesas a partir de datos abiertos del RNIC, con modelado en capas bronze y silver.',
+  },
+  {
+    ...fr[1],
+    category: 'Recopilación de datos · Aplicación web',
+    description:
+      'Comparador de precios multifuente con Scrapy, almacenamiento MySQL y una interfaz web que destaca las mejores ofertas.',
+  },
+  {
+    ...fr[2],
+    description:
+      'Toolbox idempotente para instalar y configurar herramientas DevOps en Ubuntu/Debian, organizada por roles y entornos.',
+  },
+  {
+    ...fr[3],
+    category: 'DevOps · Entorno local',
+    description:
+      'Colección de stacks Docker Compose listas para usar, con red compartida, volúmenes persistentes y configuración por entorno.',
+  },
+  {
+    ...fr[4],
+    category: 'Proyecto en equipo · Data Platform',
+    description:
+      'Aplicación web open source para preparar, analizar y visualizar datos con Flask, React y MySQL.',
+    contribution:
+      'Desarrollo backend, gestión de archivos y logs, procesamiento multiformato y contenerización.',
+  },
+  {
+    ...fr[5],
+    title: 'Portfolio personal',
+    description:
+      'Portfolio responsive para presentar mi perfil, experiencia y proyectos mediante una interfaz accesible y una cadena CI/CD completa.',
+  },
+  {
+    ...fr[6],
+    category: 'Desarrollo Python · Juego 2D',
+    description: 'Juego 2D desarrollado con Pygame, con colisiones, puntuación y efectos visuales.',
+  },
+];
+
+const de = [
+  {
+    ...fr[0],
+    category: 'Data Engineering · Top-Projekt',
+    description:
+      'End-to-End-Analysepipeline zur Untersuchung französischer Wohnungseigentümergemeinschaften anhand offener RNIC-Daten mit Bronze- und Silver-Modellierung.',
+  },
+  {
+    ...fr[1],
+    category: 'Datenerfassung · Webanwendung',
+    description:
+      'Preisvergleich aus mehreren Quellen mit Scrapy, MySQL-Speicherung und einer Weboberfläche für die besten Angebote.',
+  },
+  {
+    ...fr[2],
+    description:
+      'Idempotente Toolbox zur Installation und Konfiguration von DevOps-Werkzeugen auf Ubuntu/Debian, strukturiert nach Rollen und Umgebungen.',
+  },
+  {
+    ...fr[3],
+    category: 'DevOps · Lokale Umgebung',
+    description:
+      'Sammlung einsatzbereiter Docker-Compose-Stacks mit gemeinsamem Netzwerk, persistenten Volumes und umgebungsbasierter Konfiguration.',
+  },
+  {
+    ...fr[4],
+    category: 'Teamprojekt · Datenplattform',
+    description:
+      'Open-Source-Webanwendung zur Aufbereitung, Analyse und Visualisierung von Daten mit Flask, React und MySQL.',
+    contribution:
+      'Backend-Entwicklung, Datei- und Logverwaltung, Verarbeitung mehrerer Formate und Containerisierung.',
+  },
+  {
+    ...fr[5],
+    title: 'Persönliches Portfolio',
+    description:
+      'Responsives Portfolio zur Präsentation meines Profils, meiner Erfahrung und Projekte mit barrierefreier Oberfläche und vollständiger CI/CD-Pipeline.',
+  },
+  {
+    ...fr[6],
+    category: 'Python-Entwicklung · 2D-Spiel',
+    description:
+      'Mit Pygame entwickeltes 2D-Spiel mit Kollisionen, Punktesystem und visuellen Effekten.',
+  },
+];
+
+const zh = [
+  {
+    ...fr[0],
+    category: '数据工程 · 重点项目',
+    description:
+      '基于 RNIC 开放数据研究法国共管物业变化的端到端分析管道，采用 bronze 和 silver 分层建模。',
+  },
+  {
+    ...fr[1],
+    category: '数据采集 · Web 应用',
+    description:
+      '多来源价格比较平台，使用 Scrapy 采集电商产品、MySQL 存储，并通过 Web 界面突出最佳优惠。',
+  },
+  {
+    ...fr[2],
+    description:
+      '用于在 Ubuntu/Debian 上安装和配置 DevOps 工具的幂等工具箱，按角色组织并由环境驱动。',
+  },
+  {
+    ...fr[3],
+    category: 'DevOps · 本地环境',
+    description: '可直接使用的 Docker Compose 服务栈集合，支持共享网络、持久化存储卷和环境化配置。',
+  },
+  {
+    ...fr[4],
+    category: '团队项目 · 数据平台',
+    description: '用于准备、分析和可视化数据的开源 Web 应用，采用 Flask、React 和 MySQL。',
+    contribution: '负责后端开发、文件与日志管理、多格式处理以及平台容器化。',
+  },
+  {
+    ...fr[5],
+    title: '个人作品集',
+    description:
+      '用于展示个人资料、工作经历和项目的响应式作品集，具备无障碍界面和完整的 CI/CD 流程。',
+  },
+  {
+    ...fr[6],
+    category: 'Python 开发 · 2D 游戏',
+    description: '使用 Pygame 开发的 2D 游戏，包含碰撞处理、计分系统和视觉效果。',
+  },
+];
+
+const projects = { fr, en, es, de, zh };
 
 export default projects;

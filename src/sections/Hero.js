@@ -4,7 +4,7 @@ import { profile, socialLinks } from 'data/profile';
 import { useLanguage } from 'i18n/LanguageContext';
 
 const Hero = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const stats = ['1+', '15+', '5+'].map((value, index) => ({ value, label: t.hero.stats[index] }));
 
   return (
@@ -32,7 +32,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
-              aria-label={`${social.label} ${language === 'fr' ? 'de' : 'of'} ${profile.shortName}`}
+              aria-label={`${social.label} — ${profile.shortName}`}
             >
               <Icon name={social.icon} />
             </a>

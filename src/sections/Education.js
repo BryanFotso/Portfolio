@@ -54,9 +54,84 @@ const educationEn = [
   },
 ];
 
+const educationEs = [
+  {
+    ...educationFr[0],
+    degree: 'Ingeniería – Big Data para la Transformación Digital',
+    courses: [
+      'Data engineering y data analytics',
+      'Sistemas distribuidos, cloud y DevOps',
+      'Procesamiento de datos a gran escala',
+      'Python, SQL y Spark',
+    ],
+  },
+  {
+    ...educationFr[1],
+    degree: 'Programa preparatorio MPSI',
+    location: 'Yaundé, Camerún',
+    courses: [
+      'Algoritmos y estructuras de datos',
+      'Matemáticas avanzadas',
+      'Física y modelado',
+      'Programación en Python y C',
+    ],
+  },
+];
+
+const educationDe = [
+  {
+    ...educationFr[0],
+    degree: 'Ingenieurstudium – Big Data für die digitale Transformation',
+    courses: [
+      'Data Engineering und Data Analytics',
+      'Verteilte Systeme, Cloud und DevOps',
+      'Datenverarbeitung im großen Maßstab',
+      'Python, SQL und Spark',
+    ],
+  },
+  {
+    ...educationFr[1],
+    degree: 'MPSI-Vorbereitungsstudium',
+    location: 'Yaoundé, Kamerun',
+    courses: [
+      'Algorithmen und Datenstrukturen',
+      'Höhere Mathematik',
+      'Physik und Modellierung',
+      'Programmierung mit Python und C',
+    ],
+  },
+];
+
+const educationZh = [
+  {
+    ...educationFr[0],
+    degree: '工程师学位 — 数字化转型大数据方向',
+    courses: [
+      '数据工程与数据分析',
+      '分布式系统、云与 DevOps',
+      '大规模数据处理',
+      'Python、SQL 与 Spark',
+    ],
+  },
+  {
+    ...educationFr[1],
+    degree: 'MPSI 预科课程',
+    location: '喀麦隆雅温得',
+    courses: ['算法与数据结构', '高等数学', '物理与建模', 'Python 与 C 编程'],
+  },
+];
+
+const educationByLanguage = {
+  fr: educationFr,
+  en: educationEn,
+  es: educationEs,
+  de: educationDe,
+  zh: educationZh,
+};
+
 const Education = () => {
   const { language, t } = useLanguage();
-  const education = language === 'fr' ? educationFr : educationEn;
+  const education = educationByLanguage[language];
 
   return (
     <Section id="education" title={t.education.title}>

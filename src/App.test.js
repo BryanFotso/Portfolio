@@ -73,10 +73,23 @@ test('met en avant les projets GitHub sélectionnés', () => {
 test('permet de consulter le portfolio en anglais', async () => {
   renderApp();
 
-  await userEvent.click(screen.getByRole('button', { name: 'Anglais' }));
+  await userEvent.selectOptions(screen.getByRole('combobox', { name: 'Langue' }), 'en');
 
   expect(screen.getByRole('heading', { name: 'Projects' })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: /contact me/i })).toBeInTheDocument();
   expect(document.documentElement).toHaveAttribute('lang', 'en');
   expect(window.localStorage.getItem('portfolio-language')).toBe('en');
+});
+
+test.each([
+  ['es', 'Proyectos'],
+  ['de', 'Projekte'],
+  ['zh', '项目'],
+])('permet de consulter le portfolio dans la langue %s', async (locale, heading) => {
+  renderApp();
+
+  await userEvent.selectOptions(screen.getByRole('combobox'), locale);
+
+  expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
+  expect(document.documentElement).toHaveAttribute('lang', locale);
 });

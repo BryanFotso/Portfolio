@@ -35,20 +35,21 @@ const Navbar = ({ theme, onThemeToggle }) => {
         </div>
 
         <div className="navbar-actions">
-          <div className="language-switcher" role="group" aria-label={t.language.label}>
-            {['fr', 'en'].map((locale) => (
-              <button
-                key={locale}
-                type="button"
-                className={`language-button ${language === locale ? 'is-active' : ''}`}
-                aria-label={locale === 'fr' ? t.language.french : t.language.english}
-                aria-pressed={language === locale}
-                onClick={() => setLanguage(locale)}
-              >
-                {locale.toUpperCase()}
-              </button>
-            ))}
-          </div>
+          <label className="language-switcher">
+            <span className="sr-only">{t.language.label}</span>
+            <select
+              className="language-select"
+              value={language}
+              aria-label={t.language.label}
+              onChange={(event) => setLanguage(event.target.value)}
+            >
+              <option value="fr">FR · Français</option>
+              <option value="en">EN · English</option>
+              <option value="es">ES · Español</option>
+              <option value="de">DE · Deutsch</option>
+              <option value="zh">中文</option>
+            </select>
+          </label>
           <button
             type="button"
             className="theme-toggle"

@@ -57,6 +57,54 @@ const en = [
   },
 ];
 
-const certifications = { fr, en };
+const es = [
+  {
+    ...fr[0],
+    description:
+      'Diseño e implementación de soluciones de datos con Data Factory, Data Lake, Synapse y Databricks.',
+  },
+  { ...fr[1], description: 'Fundamentos de Azure, sus servicios cloud, arquitectura y seguridad.' },
+  {
+    ...fr[2],
+    description: 'Diseño, automatización y despliegue de proyectos de datos con Dataiku.',
+  },
+  { ...fr[3], description: 'Preparación, exploración y modelado de datos con Dataiku.' },
+  {
+    ...fr[4],
+    description: 'Análisis, visualización y manipulación avanzada de datos con Python y pandas.',
+  },
+];
+
+const de = [
+  {
+    ...fr[0],
+    description:
+      'Entwurf und Implementierung von Datenlösungen mit Data Factory, Data Lake, Synapse und Databricks.',
+  },
+  { ...fr[1], description: 'Grundlagen von Azure, Cloud-Diensten, Architektur und Sicherheit.' },
+  {
+    ...fr[2],
+    description: 'Entwurf, Automatisierung und Bereitstellung von Datenprojekten mit Dataiku.',
+  },
+  { ...fr[3], description: 'Datenaufbereitung, Exploration und Modellierung mit Dataiku.' },
+  {
+    ...fr[4],
+    description:
+      'Fortgeschrittene Datenanalyse, Visualisierung und Verarbeitung mit Python und pandas.',
+  },
+];
+
+const zh = [
+  {
+    ...fr[0],
+    description: '使用 Data Factory、Data Lake、Synapse 和 Databricks 设计并实施数据解决方案。',
+  },
+  { ...fr[1], description: 'Azure 云服务、架构和安全基础。' },
+  { ...fr[2], description: '使用 Dataiku 设计、自动化并部署数据项目。' },
+  { ...fr[3], description: '使用 Dataiku 进行数据准备、探索和建模。' },
+  { ...fr[4], description: '使用 Python 和 pandas 进行高级数据分析、可视化和处理。' },
+];
+
+const certifications = { fr, en, es, de, zh };
 
 export default certifications;
