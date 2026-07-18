@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Icon from 'components/ui/Icon';
 import { useLanguage } from 'i18n/LanguageContext';
 
-export const navItems = [
+const navItems = [
   { href: '#about', key: 'about' },
   { href: '#experience', key: 'experience' },
   { href: '#projects', key: 'projects' },

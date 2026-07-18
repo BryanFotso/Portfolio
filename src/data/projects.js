@@ -47,7 +47,7 @@ const fr = [
     category: 'Frontend · Personal Branding',
     description:
       'Portfolio responsive conçu pour présenter mon profil, mes expériences et mes réalisations avec une interface accessible et une chaîne CI/CD complète.',
-    technologies: ['React', 'Tailwind CSS', 'Jest', 'Docker', 'GitHub Actions'],
+    technologies: ['React', 'Tailwind CSS', 'Vitest', 'Vite', 'GitHub Actions'],
     repository: 'https://github.com/BryanFotso/Portfolio',
     demo: 'https://bryanfotso.github.io/Portfolio/',
   },

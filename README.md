@@ -10,8 +10,9 @@ Data Engineer passionné par la construction de pipelines robustes, la qualité 
 
 ## Technologies utilisées
 
-- **Frontend** : React (JavaScript)
+- **Frontend** : React avec Vite (JavaScript/JSX)
 - **Design** : Tailwind CSS
+- **Tests** : Vitest et React Testing Library
 - **Deployment** : GitHub Pages, Github Actions
 
 ## Structure du repo
@@ -26,7 +27,9 @@ Data Engineer passionné par la construction de pipelines robustes, la qualité 
 │   ├── sections/           # Sections de page (Hero, About, etc.)
 │   └── styles/             # Styles globaux
 ├── .github/workflows/      # CI/CD GitHub Actions
-└── docker-compose*.yml     # Docker (prod + dev)
+├── index.html              # Point d'entrée Vite
+├── vite.config.js          # Configuration Vite et Vitest
+└── docker-compose.yml      # Image de production Docker
 ```
 
 ## Déploiement
