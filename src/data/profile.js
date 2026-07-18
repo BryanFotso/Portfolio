@@ -6,7 +6,7 @@ export const profile = {
   phone: '+33 7 72 25 76 34',
   phoneHref: 'tel:+33772257634',
   location: 'Montpellier, France',
-  resume: 'Data_engineer_FR.pdf',
+  resume: 'Chris_Fotso_Data_Engineer_FR.pdf',
 };
 
 export const socialLinks = [

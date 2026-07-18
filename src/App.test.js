@@ -10,7 +10,7 @@ test('affiche les informations principales du portfolio', () => {
   expect(screen.getByRole('heading', { name: 'Projets' })).toBeInTheDocument();
   expect(screen.getByRole('link', { name: /télécharger mon cv/i })).toHaveAttribute(
     'href',
-    'Data_engineer_FR.pdf'
+    'Chris_Fotso_Data_Engineer_FR.pdf'
   );
 });
 
