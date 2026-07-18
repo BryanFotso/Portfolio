@@ -8,14 +8,17 @@ import Experience from 'sections/Experience';
 import Hero from 'sections/Hero';
 import Projects from 'sections/Projects';
 import Skills from 'sections/Skills';
+import useTheme from 'hooks/useTheme';
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <div className="app">
       <a className="skip-link" href="#main-content">
         Aller au contenu principal
       </a>
-      <Navbar />
+      <Navbar theme={theme} onThemeToggle={toggleTheme} />
       <main id="main-content">
         <Hero />
         <About />

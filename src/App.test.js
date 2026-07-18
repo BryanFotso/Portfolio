@@ -28,3 +28,16 @@ test('le menu mobile expose son état et sa cible', () => {
     'true'
   );
 });
+
+test('permet de basculer entre les thèmes clair et sombre', async () => {
+  render(<App />);
+
+  const themeButton = screen.getByRole('button', { name: 'Activer le mode sombre' });
+  await userEvent.click(themeButton);
+
+  expect(document.documentElement).toHaveAttribute('data-theme', 'dark');
+  expect(screen.getByRole('button', { name: 'Activer le mode clair' })).toHaveAttribute(
+    'aria-pressed',
+    'true'
+  );
+});
