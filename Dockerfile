@@ -1,8 +1,11 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 
+ARG PUBLIC_URL=/
+ENV PUBLIC_URL=${PUBLIC_URL}
+
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN HUSKY=0 npm ci
 
 COPY . .
 RUN npm run build

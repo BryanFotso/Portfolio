@@ -1,15 +1,18 @@
+import Card from 'components/ui/Card';
+import Icon from 'components/ui/Icon';
+import Section from 'components/ui/Section';
+
 const education = [
   {
     degree: 'Cycle Ingénieur – Big Data pour la Transformation Numérique',
     school: 'ESIGELEC',
     location: 'Rouen, France',
     period: '2022 – 2025',
-    color: '#007aff',
     courses: [
-      'Data engineering, data analytics',
-      'Systèmes distribués, cloud & DevOps',
+      'Data engineering et data analytics',
+      'Systèmes distribués, cloud et DevOps',
       'Traitement de données à grande échelle',
-      'Python, SQL, Spark',
+      'Python, SQL et Spark',
     ],
   },
   {
@@ -17,118 +20,39 @@ const education = [
     school: 'PREPAVOGT',
     location: 'Yaoundé, Cameroun',
     period: '2020 – 2022',
-    color: '#af52de',
     courses: [
-      'Algorithmique, structures de données',
-      'Mathématiques avancées (analyse, algèbre)',
-      'Physique, modélisation',
-      'Programmation Python, C',
+      'Algorithmique et structures de données',
+      'Mathématiques avancées',
+      'Physique et modélisation',
+      'Programmation Python et C',
     ],
   },
 ];
 
-const Education = () => {
-  return (
-    <section id="education" className="section">
-      <div className="section-content">
-        <h2 className="section-title">Formation</h2>
-        <div className="grid-2 education-grid">
-          {education.map((edu, idx) => (
-            <div
-              key={idx}
-              className="card education-card"
-              style={{
-                background: 'rgba(255,255,255,0.95)',
-                border: `2px solid ${edu.color}30`,
-                borderRadius: '24px',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
-              }}
-            >
-              {/* Badge période */}
-              <div
-                className="education-badge"
-                style={{
-                  position: 'absolute',
-                  top: '1.5rem',
-                  right: '1.5rem',
-                  background: edu.color,
-                  color: 'white',
-                  borderRadius: '16px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-                }}
-              >
-                {edu.period}
-              </div>
-              {/* Diplôme */}
-              <h3
-                className="education-title"
-                style={{
-                  fontWeight: 700,
-                  color: edu.color,
-                }}
-              >
-                {edu.degree}
-              </h3>
-              {/* École */}
-              <div
-                style={{
-                  fontWeight: 500,
-                  color: '#8e8e93',
-                  marginBottom: '0.2rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                }}
-              >
-                <i className="fas fa-university" style={{ color: edu.color }}></i>
-                {edu.school}
-              </div>
-              {/* Localisation */}
-              <div
-                style={{
-                  fontWeight: 500,
-                  color: '#8e8e93',
-                  marginBottom: '0.2rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                }}
-              >
-                <i className="fas fa-map-marker-alt" style={{ color: edu.color }}></i>
-                {edu.location}
-              </div>
-              {/* Matières principales */}
-              <ul
-                className="education-list"
-                style={{
-                  color: '#1d1d1f',
-                  margin: 0,
-                  padding: 0,
-                  listStyle: 'none',
-                }}
-              >
-                {edu.courses.map((course, cIdx) => (
-                  <li
-                    key={cIdx}
-                    className="education-item"
-                    style={{
-                      color: '#8e8e93',
-                    }}
-                  >
-                    <i
-                      className="fas fa-check-circle"
-                      style={{ color: edu.color, fontSize: '1rem' }}
-                    ></i>
-                    {course}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+const Education = () => (
+  <Section id="education" title="Formation">
+    <div className="card-grid">
+      {education.map((item) => (
+        <Card key={`${item.school}-${item.period}`} className="education-card">
+          <span className="period">{item.period}</span>
+          <h3>{item.degree}</h3>
+          <p className="experience-company">
+            <Icon name="building" /> {item.school}
+          </p>
+          <p className="meta">
+            <Icon name="location" /> {item.location}
+          </p>
+          <ul className="highlight-list">
+            {item.courses.map((course) => (
+              <li key={course}>
+                <Icon name="check" /> {course}
+              </li>
+            ))}
+          </ul>
+        </Card>
+      ))}
+    </div>
+  </Section>
+);
 
 export default Education;

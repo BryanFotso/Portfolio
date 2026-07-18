@@ -11,7 +11,7 @@ Portfolio professionnel React (CRA) avec une base Tailwind prête à l'emploi, s
 ## Lancement local
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -24,12 +24,6 @@ docker compose up --build
 ```
 
 L'application est disponible sur `http://localhost:8080`.
-
-### Mode dev Docker (hot reload)
-
-```bash
-docker compose -f docker-compose.yml -f docker-compose.dev.yml up --build
-```
 
 ## Commandes utiles
 
@@ -52,7 +46,7 @@ npm run test
 │   ├── sections/           # Sections de page (Hero, About, etc.)
 │   └── styles/             # Styles globaux
 ├── .github/workflows/      # CI GitHub Actions
-└── docker-compose*.yml     # Docker (prod + dev)
+└── docker-compose.yml      # Build et exécution de l'image de production
 ```
 
 Alias d'import: baseUrl configuré sur `src` (`components/...`, `sections/...`).
@@ -65,4 +59,4 @@ Copie `.env.example` vers `.env` si besoin. CRA exige le préfixe `REACT_APP_`.
 
 - **Port déjà utilisé**: change le port dans `docker-compose.yml` ou libère 8080/3000.
 - **Version Node**: utilise Node 20 LTS pour éviter des écarts de build.
-- **Cache npm**: en cas d'erreur, supprime `node_modules` et relance `npm install`.
+- **Cache npm**: en cas d'erreur, supprime `node_modules` et relance `npm ci`.
