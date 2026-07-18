@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Icon from 'components/ui/Icon';
 import { useLanguage } from 'i18n/LanguageContext';
@@ -15,9 +15,24 @@ const navItems = [
 
 const Navbar = ({ theme, onThemeToggle }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuButtonRef = useRef(null);
   const { language, setLanguage, t } = useLanguage();
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+
+    const closeMenuWithEscape = (event) => {
+      if (event.key !== 'Escape') return;
+
+      setIsMenuOpen(false);
+      menuButtonRef.current?.focus();
+    };
+
+    document.addEventListener('keydown', closeMenuWithEscape);
+    return () => document.removeEventListener('keydown', closeMenuWithEscape);
+  }, [isMenuOpen]);
 
   return (
     <nav className="navbar" aria-label={t.navigation}>
@@ -64,6 +79,7 @@ const Navbar = ({ theme, onThemeToggle }) => {
           </button>
 
           <button
+            ref={menuButtonRef}
             type="button"
             className="navbar-burger"
             aria-label={isMenuOpen ? t.menu.close : t.menu.open}
@@ -75,7 +91,11 @@ const Navbar = ({ theme, onThemeToggle }) => {
           </button>
         </div>
 
-        <div id="mobile-navigation" className={`navbar-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}>
+        <div
+          id="mobile-navigation"
+          className={`navbar-mobile-menu ${isMenuOpen ? 'is-open' : ''}`}
+          hidden={!isMenuOpen}
+        >
           {navItems.map((item) => (
             <a key={item.href} href={item.href} className="navbar-mobile-link" onClick={closeMenu}>
               {t.nav[item.key]}

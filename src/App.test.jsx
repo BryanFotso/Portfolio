@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import App from './App';
@@ -26,19 +26,28 @@ test('affiche les informations principales du portfolio', () => {
   );
 });
 
-test('le menu mobile expose son état et sa cible', () => {
+test('masque le menu mobile au clavier et permet de le fermer avec Échap', async () => {
   renderApp();
 
   const menuButton = screen.getByRole('button', { name: 'Ouvrir le menu' });
+  const mobileNavigation = document.getElementById('mobile-navigation');
   expect(menuButton).toHaveAttribute('aria-controls', 'mobile-navigation');
   expect(menuButton).toHaveAttribute('aria-expanded', 'false');
+  expect(mobileNavigation).toHaveAttribute('hidden');
 
-  userEvent.click(menuButton);
+  await userEvent.click(menuButton);
 
   expect(screen.getByRole('button', { name: 'Fermer le menu' })).toHaveAttribute(
     'aria-expanded',
     'true'
   );
+  expect(mobileNavigation).not.toHaveAttribute('hidden');
+
+  fireEvent.keyDown(document, { key: 'Escape' });
+
+  expect(menuButton).toHaveAttribute('aria-expanded', 'false');
+  expect(mobileNavigation).toHaveAttribute('hidden');
+  expect(menuButton).toHaveFocus();
 });
 
 test('permet de basculer entre les thèmes clair et sombre', async () => {
@@ -100,6 +109,18 @@ test('permet de consulter le portfolio en anglais', async () => {
   expect(screen.getByRole('link', { name: /contact me/i })).toBeInTheDocument();
   expect(document.documentElement).toHaveAttribute('lang', 'en');
   expect(window.localStorage.getItem('portfolio-language')).toBe('en');
+  expect(screen.getByRole('img', { name: 'SIMPLICITI' })).toHaveAttribute(
+    'src',
+    'company-logos/simpliciti.svg'
+  );
+  expect(screen.getByRole('img', { name: 'Capgemini – Sogeti' })).toHaveAttribute(
+    'src',
+    'company-logos/sogeti.svg'
+  );
+  expect(screen.getByRole('img', { name: 'Gautier Semences' })).toHaveAttribute(
+    'src',
+    'company-logos/gautier-semences.svg'
+  );
 });
 
 test.each([

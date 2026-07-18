@@ -66,10 +66,9 @@ const fr = [
 
 const en = [
   {
+    ...fr[0],
     title: 'Data Integration Engineer',
-    company: 'SIMPLICITI',
     period: '11/2025 – Present',
-    location: 'Montpellier, France',
     description:
       'Integration, automation and reliability of customer and operational data flows within the STYX ERP.',
     highlights: [
@@ -79,13 +78,10 @@ const en = [
       'Improvement of data flows between external systems and the STYX ERP',
       'Contribution to an Azure Data Factory migration proof of concept',
     ],
-    technologies: ['SQL', 'Python', 'cron jobs', 'GitLab', 'Azure Data Factory'],
   },
   {
+    ...fr[1],
     title: 'Data Engineer Consultant',
-    company: 'Capgemini – Sogeti',
-    period: '09/2024 – 09/2025',
-    location: 'Toulouse, France',
     description: 'Design of robust data services and pipelines to support Data Science teams.',
     highlights: [
       'Migration of ingestion flows following source API changes, including Atlassian Jira',
@@ -95,22 +91,10 @@ const en = [
       'Unit tests integrated into CI with up to 85% coverage',
       'Internal dbt workshop delivered to data consultants',
     ],
-    technologies: [
-      'Python',
-      'FastAPI',
-      'Pytest',
-      'Docker',
-      'Azure DevOps',
-      'dbt Core',
-      'PostgreSQL',
-      'Kubernetes',
-    ],
   },
   {
+    ...fr[2],
     title: 'Database Engineer',
-    company: 'Gautier Semences',
-    period: '04/2024 – 08/2024',
-    location: 'Avignon, France',
     description:
       'ERP data preparation and internal process automation to secure a migration to Sage X3.',
     highlights: [
@@ -121,7 +105,6 @@ const en = [
       'Process automation reducing execution time from four hours to under three minutes',
       'Creation of an equipment tracking dashboard',
     ],
-    technologies: ['SQL', 'MySQL', 'SQL Server', 'VBA', 'Excel', 'Microsoft Navision'],
   },
 ];
 
